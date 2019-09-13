@@ -18,6 +18,13 @@ RUN apt-get update -qq && apt-get install -qqy --no-install-recommends \
   gcc=4:6.3* \
   && rm -rf /var/lib/apt/lists/*
 
+RUN apk --no-cache add \
+  curl~=7 \
+  jq~=1.6 \
+  bash~=4 \
+  git~=2 \
+  make~=4
+
 RUN gem install rubocop
 
 COPY lib.sh /lib.sh
